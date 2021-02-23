@@ -1,0 +1,119 @@
+\begin{thebibliography}{10}
+
+\bibitem{BGHT}
+{\sc F.~Bergeron, A.~M. Garsia, M.~Haiman, and G.~Tesler}, {\em Identities and
+  positivity conjectures for some remarkable operators in the theory of
+  symmetric functions}, vol.~6, 1999, pp.~363--420.
+\newblock Dedicated to Richard A. Askey on the occasion of his 65th birthday,
+  Part III.
+
+\bibitem{BHMPS}
+{\sc J.~Blasiak, M.~Haiman, J.~Morse, A.~Pun, and G.~Seelinger}, {\em A proof
+  of the {E}xtended {D}elta {C}onjecture}.
+\newblock arXiv:2102.08815, 2021, 2102.08815.
+
+\bibitem{Borel}
+{\sc A.~Borel}, {\em Sur la cohomologie des espaces fibr\'{e}s principaux et
+  des espaces homog{\`e}nes de groupes de {L}ie compacts}, Ann. of Math. (2),
+  57 (1953), pp.~115--207.
+
+\bibitem{Borho-MacPherson}
+{\sc W.~Borho and R.~MacPherson}, {\em Partial resolutions of nilpotent
+  varieties}, in Analysis and topology on singular spaces, {II}, {III}
+  ({L}uminy, 1981), vol.~101 of Ast\'{e}risque, Soc. Math. France, Paris, 1983,
+  pp.~23--74.
+
+\bibitem{Brundan-Ostrik}
+{\sc J.~Brundan and V.~Ostrik}, {\em Cohomology of {S}paltenstein varieties},
+  Transform. Groups, 16 (2011), pp.~619--648.
+
+\bibitem{DM}
+{\sc M.~D'Adderio and A.~Mellit}, {\em A proof of the compositional {D}elta
+  conjecture}.
+\newblock arXiv:2011.11467, 2020, 2011.11467.
+
+\bibitem{dCP}
+{\sc C.~De~Concini and C.~Procesi}, {\em Symmetric functions, conjugacy classes
+  and the flag variety}, Invent. Math., 64 (1981), pp.~203--219.
+
+\bibitem{Garsia-Haiman}
+{\sc A.~M. Garsia and M.~Haiman}, {\em A graded representation model for
+  {M}acdonald's polynomials}, Proc. Nat. Acad. Sci. U.S.A., 90 (1993),
+  pp.~3607--3610.
+
+\bibitem{Garsia-Procesi}
+{\sc A.~M. Garsia and C.~Procesi}, {\em On certain graded {$S_n$}-modules and
+  the {$q$}-{K}ostka polynomials}, Adv. Math., 94 (1992), pp.~82--138.
+
+\bibitem{GriffinThesis}
+{\sc S.~T. Griffin}, {\em Combinatorics and Representation Theory of Rank
+  Varieties, Springer Fibers, and Hyperplane Arrangements}, PhD thesis,
+  University of Washington, August 2020.
+
+\bibitem{GriffinOSP}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Ordered set
+  partitions, {G}arsia-{P}rocesi modules, and rank varieties}, Trans. Amer.
+  Math. Soc.,  (Accepted, 2020).
+
+\bibitem{HRW}
+{\sc J.~Haglund, J.~B. Remmel, and A.~T. Wilson}, {\em The {D}elta
+  {C}onjecture}, Trans. Amer. Math. Soc., 370 (2018), pp.~4029--4057.
+
+\bibitem{HRS1}
+{\sc J.~Haglund, B.~Rhoades, and M.~Shimozono}, {\em Ordered set partitions,
+  generalized coinvariant algebras, and the {D}elta {C}onjecture}, Adv. Math.,
+  329 (2018), pp.~851--915.
+
+\bibitem{Haiman01}
+{\sc M.~Haiman}, {\em Hilbert schemes, polygraphs and the {M}acdonald
+  positivity conjecture}, J. Amer. Math. Soc., 14 (2001), pp.~941--1006.
+
+\bibitem{Haiman02}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Vanishing theorems
+  and character formulas for the {H}ilbert scheme of points in the plane},
+  Invent. Math., 149 (2002), pp.~371--407.
+
+\bibitem{Hatcher}
+{\sc A.~Hatcher}, {\em Algebraic topology}, Cambridge University Press,
+  Cambridge, 2002.
+
+\bibitem{Hotta-Springer}
+{\sc R.~Hotta and T.~A. Springer}, {\em A specialization theorem for certain
+  {W}eyl group representations and an application to the {G}reen polynomials of
+  unitary groups}, Invent. Math., 41 (1977), pp.~113--127.
+
+\bibitem{Pawlowski-Rhoades}
+{\sc B.~Pawlowski and B.~Rhoades}, {\em A flag variety for the {D}elta
+  {C}onjecture}, Trans. Amer. Math. Soc., 372 (2019), pp.~8195--8248.
+
+\bibitem{Precup-AffinePavings}
+{\sc M.~Precup}, {\em Affine pavings of {H}essenberg varieties for semisimple
+  groups}, Selecta Math. (N.S.), 19 (2013), pp.~903--922.
+
+\bibitem{Precup-Tymoczko-Parabolic}
+{\sc M.~{Precup} and J.~{Tymoczko}}, {\em {Hessenberg varieties of parabolic
+  type}}, arXiv e-prints,  (2017), arXiv:1701.04140.
+
+\bibitem{Springer-TrigSum}
+{\sc T.~A. Springer}, {\em Trigonometric sums, {G}reen functions of finite
+  groups and representations of {W}eyl groups}, Invent. Math.,  (1976),
+  pp.~173--207.
+
+\bibitem{Springer-WeylGrpReps}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em A construction of
+  representations of {W}eyl groups}, Invent. Math., 44 (1978), pp.~279--293.
+
+\bibitem{Tanisaki}
+{\sc T.~Tanisaki}, {\em Defining ideals of the closures of the conjugacy
+  classes and representations of the {W}eyl groups}, T\^{o}hoku Math. J. (2),
+  34 (1982), pp.~575--585.
+
+\bibitem{Tymoczko-LinearConditions}
+{\sc J.~S. Tymoczko}, {\em Linear conditions imposed on flag varieties}, Amer.
+  J. Math., 128 (2006), pp.~1587--1604.
+
+\bibitem{Zabrocki}
+{\sc M.~{Zabrocki}}, {\em A module for the {D}elta conjecture}.
+\newblock arXiv:1902.08966, 2019.
+
+\end{thebibliography}
