@@ -1,0 +1,125 @@
+\ProvidesPackage{researchmacros}[2017/10/12 v1.0 My research macros]
+
+%%%% packages %%%%
+\RequirePackage{fullpage}
+\RequirePackage{setspace}
+\RequirePackage[latin1]{inputenc}
+\RequirePackage{float}
+\RequirePackage{amsmath} 
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{latexsym} 
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{subfig}
+\RequirePackage{color}
+%\RequirePackage{hyperref}
+\RequirePackage{verbatim}
+\RequirePackage[all]{xy}
+\RequirePackage{graphics}
+\RequirePackage{pdfsync}
+\RequirePackage{ytableau}
+\RequirePackage[shortlabels]{enumitem}
+\RequirePackage{mdframed}
+\RequirePackage{changepage}
+\RequirePackage{siunitx}
+\RequirePackage{hyperref}
+
+
+%%%% theorem definitions %%%%
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{case}{Case}
+
+
+
+\numberwithin{equation}{section}
+
+
+%%%% blackboard letters %%%%
+
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bK}{\mathbb{K}}
+\newcommand{\bP}{\mathbb{P}} 
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bZ}{\mathbb{Z}}
+
+%%%%% calligraphic commands %%%%
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cW}{\mathcal{W}}
+
+%%%%% fraktur commands %%%%%
+
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fS}{\mathfrak{S}}
+\newcommand{\fC}{\mathfrak{C}}
+
+
+%%%%% some color macros  %%%%%
+
+\newcommand{\tcr}[1]{\textcolor{red}{#1}}
+\newcommand{\tcb}[1]{\textcolor{blue}{#1}}
+\newcommand{\tcg}[1]{\textcolor{green}{#1}}
+\newcommand{\tcc}[1]{\textcolor{cyan}{#1}}
+\newcommand{\tcm}[1]{\textcolor{magenta}{#1}}
+\newcommand{\tcp}[1]{\textcolor{purple}{#1}}
+
+%%%%% derivative macros %%%%%
+
+\newcommand{\der}[2][]{\frac{d#1}{d#2}}
+\newcommand{\pder}[2][]{\frac{\partial#1}{\partial#2}}
+
+%%%% combinatorics statistics %%%%%
+
+\newcommand{\des}{\mathrm{des}}
+\newcommand{\asc}{\mathrm{asc}}
+\newcommand{\Des}{\mathrm{Des}}
+\newcommand{\Asc}{\mathrm{Asc}}
+
+
+
+%%%% algebra macros %%%%
+
+\newcommand{\gr}{\mathrm{gr}}
+\newcommand{\hgr}{\mathrm{hgr}} %homogeneous grading, used in tree symm paper follow-up
+\newcommand{\vecspan}{\mathrm{span}}
+\newcommand{\ch}{\mathrm{ch}}
+\newcommand{\grch}{\mathrm{grch}} %graded Frob. characteristic, used in tree symm paper follow-up
+
+%%%% misc %%%%
+
+\newcommand{\wt}{\mathrm{wt}}
+
+
+%%%% formatting %%%%
+
+%\setlength{\textfloatsep}{2pt}
+%\setlength{\intextsep}{2pt}
+%\setlist{nolistsep}
+%\setlength\parindent{0pt}
