@@ -5,6 +5,9 @@
 \usepackage{enumitem}
 \usepackage{epstopdf}
 \epstopdfsetup{outdir=./}
+\usepackage[all]{xy}
+\usepackage[vcentermath]{youngtab}
+
 
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
@@ -58,7 +61,7 @@
 
 
 
-
+\usepackage[inline]{showlabels}
 \begin{document}
 \maketitle
 
@@ -1066,7 +1069,6 @@ which completes the proof.
 \section{Spaltenstein varieties and the cohomology of $Y_{n,\lambda,s}$}\label{sec:SpaltensteinAndCohomology}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\SG{To do: Rewrite this section using Alex's notation}
 
 In this section, we prove that there is a cellular surjective map from a Spaltenstein variety to $Y_{n,\la,s}$. We use this fact together with work of Brundan and Ostrik on the cohomology ring of a Spaltenstein variety~\cite{Brundan-Ostrik} to prove that the cohomology ring of $Y_{n,\la,s}$ is isomorphic to $R_{n,\la,s}$, stated as Theorem~\ref{thm:MainTheorem}.
 
@@ -1174,7 +1176,7 @@ Suppose $i\neq i_p$ for all $p$. Recall that we have defined $Uf_{T(i,j)} = f_{T
 
 
 \begin{lemma}\label{lem:FiberBundle}
-The map $\pi$ is surjective. For $T$ a Schubert compatible and $w$ admissible,
+The map $\pi$ is surjective. For $T$ a Schubert compatible filling and $w$ admissible,
 \begin{align}\label{eq:FiberBundleIso}
 \pi^{-1}(C_{w}\cap Y_{n,\la,s,T}) \cong (C_{w}\cap Y_{n,\la,s,T})\times \cB_{(s-1)^{n-k}}^{\Lambda'},
 \end{align}
@@ -1271,10 +1273,70 @@ Since both of these rings are free $\bZ$-modules and have the same rank generati
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Irreducible components}\label{sec:IrreducibleComponents}
+\section{Irreducible components and a generalization of the Springer correspondence}\label{sec:IrreducibleComponents}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section, we characterize the irreducible components of $Y_{n,\la,s}$. We show that the number of irreducible components is equal to $\binom{n}{k}\cdot\#\SYT(\la)$ when $s>\ell(\la)$.
+
+In this section, we characterize the irreducible components of $Y_{n,\la,s}$, and we show that the number of irreducible components is equal to $\binom{n}{k}\cdot\#\SYT(\la)$ when $s>\ell(\la)$. We then prove a generalization of the Springer correspondence to the setting of induced Specht modules.
+
+
+Given a subspace $W\subseteq \bC^K$ such that $N_\Lambda W\subseteq W$, then $N_\Lambda(W\cap F_k)\subseteq W\cap F_k$. The nilpotent operator $N_\Lambda$ thus induces a nilpotent operator on the quotient space $F_k/(W\cap F_k)$, which we denote by $N_\Lambda|_{F_k/(W\cap F_k)}$.
+
+Suppose $T$ is a filling of the Young diagram of $\lambda$ with a $k$-element subset of $[n]$ such that the labels decrease from left to right across each row. Let $T|_{n,\dots, n-i+1}$ be the restriction of $T$ to the cells containing the labels $n,\dots, n-i+1$. Furthermore, let $\mathrm{sh}(T|_{n,\dots, n-i+1})$ be the partition obtained by recording the row sizes of $T|_{n,\dots, n-i+1}$ and then sorting them to a partition.
+Given such a filling $T$ that also decreases down each column, define the following subset of $Y_{n,\la,s}$,
+\begin{align}
+Y_{n,\la,s}^{T} = \{V_\bullet \in Y_{n,\la,s} \st N|_{\bC^\lambda/(V_i\cap \bC^\lambda)}\text{ has Jordan type }\mathrm{sh}(T|_{n,\dots,n-i+1})\text{ for all }i\}.
+\end{align}
+
+
+\begin{lemma}
+\label{lem:Jordan}
+Each subvariety $Y_{n,\la,s}^{T}$ is an irreducible locally-closed union of cells from the affine paving.
+If $s>\ell(\la)$, then each $Y_{n,\la,s}^{T}$ is nonempty. If $s = \ell(\la)$, then $Y_{n,\la,s}^{T}$ is nonempty if and only if for all $i$, if $T$ does not contain $i$ as a label then the labels up to $i-1$ fill at least one row of $\lambda$. Furthermore, if $Y_{n,\la,s}^{T}$ is nonempty, then
+\begin{align}\label{eq:DimFormulaForCmpt}
+\dim_\bC(Y_{n,\la,s}^{T}) = n(\la) + (n-k)(s-1).
+\end{align}
+The $Y_{n,\la,s}^{T}$ give a partition of $Y_{n,\la,s}$ as we consider all possible choices for $T$.
+\end{lemma}
+
+\begin{theorem}
+The space $Y_{n,\la,s}$ is equidimensional of dimension $n(\la) + (n-k)(s-1)$.  In particular, the closed subvarieties $\overline{Y_{n,\la,s}^{T}}$ for which $Y_{n,\la,s}^{T}$ is nonempty (as described in Lemma \ref{lem:Jordan}) form a complete set of irreducible components. In the case $s>\ell(\la)$, there are $\binom{n}{k}\cdot \#\SYT(\la)$ many irreducible components.
+\end{theorem}
+
+For each cell in the affine paving, the filling $T$ can be obtained from the partial filling of $\Lambda$ by restricting the labeling to the upper right copy of $\lambda$ contained in $\Lambda$, as depicted in Figure~\ref{fig:Lambda}.
+
+\begin{example}
+For the filling in Figure \ref{fig:Filling}, the corresponding filling of $\lambda$ is
+\[\young(21,4),\]
+and the Jordan types of the operators $N|_{\bC^\lambda/(V_i\cap \bC^\lambda)}$ for $i=1,2,3,4,5$ are
+\[
+{\small \yng(1,1)}\supset {\small \yng(1)}\supset {\small \yng(1)}\supset \emptyset \supset \emptyset.
+\]
+Notice that the filling was not column-strict; accordingly, the row lengths corresponding to the Jordan type of $N|_{\bC^\lambda/(V_2\cap \bC^\lambda)}$ are $(0, 1)$ (corresponding to the entry $4 \in \lambda$), but become $(1, 0)$ after sorting.
+\end{example}
+
+In the case $s>\ell(\la)$, the irreducible components are naturally indexed by Standard Young Tableaux on $(n-k) \cup \la$.  This indexing of irreducible components extends to a representation theory statement on the top cohomology group of $Y_{n,\lambda,s}$, generalizing Springer's theorem that the top cohomology group of a Springer fiber is a Specht module.
+ 
+
+\begin{theorem}
+Let $d = \dim(Y_{n,\la,s}) = n(\la) + (n-k)(s-1)$, and consider $S_k$ as the subgroup of $S_n$ permuting the elements of $[k]$. For $s>\ell(\la)$, we have an isomorphism of $S_n$-modules
+\begin{align}
+H^{2d}(Y_{n,\la,s};\bQ) \cong \mathrm{Ind}\!\uparrow_{S_k}^{S_n} (S^\la).
+\end{align}
+For $s=\ell(\la)$, we have
+\begin{align}\label{eq:SLengthLambdaIso}
+    H^{2d}(Y_{n,\la,s};\bQ) \cong S^{\Lambda/(n-k)^{s-1}},
+\end{align}
+the Specht module of skew shape $\Lambda/(n-k)^{s-1}$.
+\end{theorem}
+
+In the case of $s>\ell(\la)$, the proof follows by combining Theorem~\ref{thm:MainTheorem} and the fact that, in this case, the top degree component of $R_{n,\lambda,s}$ is isomorphic to $\mathrm{Ind}\!\!\uparrow_{S_k}^{S_n}(S^\lambda)$~\cite[Corollary 3.3.15]{GriffinThesis}. In the case of $s=\ell(\la)$, the proof follows by combining Theorem~\ref{thm:MainTheorem} with the formula \cite[Theorem 5.13]{GriffinOSP} for $\Frob(R_{n,\lambda,s};q)$ and then using bijective techniques to show that the top degree component of this symmetric function is the skew Schur function $s_{\Lambda/(n-k)^{s-1}}(x)$.
+
+
+\section{Old Stuff}
+
+
+
 
 Given a sequence of partitions $\mu^\bullet = (\emptyset\subseteq \mu^{1}\subseteq \mu^{2}\subseteq \cdots \subseteq \mu^{n})$ such that $\mu^{i}/\mu^{i-1}$ consists of at most one box for all $i$, define the following subset of $Y_{n,\la,s}$,
 \begin{align}
@@ -1431,7 +1493,7 @@ Can we identify the cohomology classes of the cell closures in the case of $Y_{n
 
 \section{Acknowledgements}
 
-We are grateful to Sara Billey, Isabella Novik, Julia Pevtsova, Martha Precup, Brendon Rhoades, and Andy Wilson for helpful conversations.
+We are grateful to Sara Billey, Erik Insko, Isabella Novik, Julia Pevtsova, Martha Precup, Brendon Rhoades, and Andy Wilson for helpful conversations.
 
 
 \bibliographystyle{hsiam}
