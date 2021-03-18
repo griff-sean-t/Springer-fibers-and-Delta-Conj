@@ -129,7 +129,7 @@ where $d$ is the dimension of the variety $Y_{n,\lambda,s}$ and $S^\la$ is the i
 \end{align}
 and we give a characterization of the irreducible components of $Y_{n,\la,s}$.
 
-Finally, we generalize results of de Concini and Procesi~\cite{dCP}. Let $\mathfrak{sl}_n$ be the Lie algebra of trace zero $n\times n$ matrices over $\bQ$. Given $\la\vdash n$, define $O_\lambda\subseteq \mathfrak{sl}_n$ to be the set of $n\times n$ nilpotent matrices over $\bQ$ with Jordan type $\lambda$, and let $\overline{O}_\lambda$ be its closure in $\mathfrak{sl}_n$. Let $\mathfrak{t}\subset \mathfrak{sl}_n$ be the Cartan subalgebra of diagonal matrices. Then de Concini and Procesi proved that
+Finally, we generalize results of de Concini and Procesi~\cite{dCP}. Let $\mathfrak{gl}_n$ be the Lie algebra of $n\times n$ matrices over $\bQ$. Given $\la\vdash n$, define $O_\lambda\subseteq \mathfrak{gl}_n$ to be the set of $n\times n$ nilpotent matrices over $\bQ$ with Jordan type $\lambda$, and let $\overline{O}_\lambda$ be its closure in $\mathfrak{gl}_n$. Let $\mathfrak{t}\subset \mathfrak{gl}_n$ be the Cartan subalgebra of diagonal matrices. Then de Concini and Procesi proved that
 \begin{align}
     H^*(\cB^\la;\bQ) \cong \bQ[\overline{O}_{\la'}\cap \mathfrak{t}],
 \end{align}
@@ -138,7 +138,7 @@ where the right-hand side is the coordinate ring of the scheme-theoretic interse
     H^*(Y_{n,\la};\bQ) \cong \bQ[\overline{O}_{n,\la'}\cap \mathfrak{t}].
 \end{align}
 
-In Section~\ref{sec:Background}, we outline preliminary definitions and previous results. In Section~\ref{sec:AffinePaving}, we define the variety $Y_{n,\lambda,s}$ and prove that it has an affine paving given by intersecting $Y_{n,\lambda,s}$ with Schubert cells. We then use this to compute the rank generating function of the cohomology ring.
+In Section~\ref{sec:Background}, we outline preliminary definitions and previous results. In Section~\ref{sec:AffinePaving}, we define the variety $Y_{n,\lambda,s}$ and prove that it has an affine paving, which is a slight modification of Shimomura's paving of a Steinberg variety~\cite{Shimomura}, by intersecting $Y_{n,\lambda,s}$ with Schubert cells. We prove that the cells of this paving have an inductive structure that allows us to compute the rank generating function of the cohomology ring.
 In Section~\ref{sec:EmptyPartition}, we analyze the case of $\lambda=\emptyset$ and prove that the variety $Y_{n,\emptyset,s}$ has the same cohomology ring as a product of projective spaces.
 In Section~\ref{sec:SpaltensteinAndCohomology}, we show that $Y_{n,\la,s}$ is the image of a projection down from a Spaltenstein variety, and we us this to prove a presentation of the cohomology ring of $Y_{n,\lambda,s}$ as a quotient ring.
 In Section~\ref{sec:IrreducibleComponents}, we prove our generalization of the Springer correspondence, and we characterize the irreducible components of $Y_{n,\la,s}$.
@@ -428,7 +428,7 @@ Since the set of generators of the homogeneous ideal $I_{n,\la,s}$ is closed und
 
 \AW{We should say this is an analogue of the Tymoczko and Precup results for Hessenberg varieties and that we're using a similar approach.}
 
-In this section, we define a family of varieties $Y_{n,\lambda,s}$ that generalize the Springer fibers. We construct an affine paving of $Y_{n,\lambda,s}$ by intersecting it with Schubert cells, analogous to the affine pavings for Hessenberg varieties constructed by Precup and Tymoczko~\cite{Precup-AffinePavings,Precup-Tymoczko-Parabolic,Tymoczko-LinearConditions}. We then use this affine paving to show that $H^*(Y_{n,\lambda,s})$ and $R_{n,\lambda,s}$ have the same Hilbert-Poincar\'e series.
+In this section, we define a family of varieties $Y_{n,\lambda,s}$ that generalize the Springer fibers. We construct an affine paving of $Y_{n,\lambda,s}$ by intersecting it with Schubert cells. The affine paving presented here is a slight modification of the affine pavings given by Fresse, Precup--Tymoczko, and Shimomura for Steinberg varieties~\cite{Fresse,Precup-Tymoczko-Parabolic,Shimomura}. We show that this affine paving has an inductive structure that allows us to show $H^*(Y_{n,\lambda,s})$ and $R_{n,\lambda,s}$ have the same Hilbert--Poincar\'e series.
 
 Let $k\leq n$, where $k$ is a nonnegative integer and $n$ is a positive integer, let $\la\vdash k$, and let $s\geq \ell(\la)$. Define $\Lambda \coloneqq \Lambda(n,\lambda,s) \coloneqq (n-k+\lambda_1,\ldots,n-k+\lambda_s)$ and $K\coloneqq |\Lambda|=s(n-k)+k$. We define a variety $Y_{n,\la,s}$, which is our main object of study.
 \begin{definition}
@@ -550,7 +550,7 @@ and if $i> \ell(\lambda)$, then $\fl_T^{(i)}$ is the unique order preserving fun
 For $i\leq \ell(\lambda)$, let $T^{(i)}$ be the filling obtained by deleting the last box in row $i$, applying $\fl_T^{(i)}$ to the label in each cell, and reordering the rows so that the labels of the cells in the new right edge are increasing from top to bottom.
 For $i>\ell(\lambda)$, we also delete each cell $(i',1)$ for $i'\neq i$ and shift row $i'$ to the left by one unit before applying $\fl_T^{(i)}$ to form $T^{(i)}$.
 
-See Figure~\ref{fig:ReadingOrder} for an example of a Schubert compatible filling $T$ and the fillings $T^{(1)}$ and $T^{(3)}$. When constructing $T^{(3)}$, the cells labeled by $7,13,14$, and $16$ are deleted, and rows $1,2$ and $4$ are shifted left by one unit. The cells are relabeled as follows: $\fl_T^{(3)}(8)=7$, $\fl_T^{(3)}(9) = 8$, $\fl_T^{(3)}(10) = 9$, $\fl_T^{(3)}(11)=10$, $\fl_T^{(3)}(12) = 11$, and $\fl_T^{(3)}(15)=12$. Then rows $3$ and $4$ are swapped to obtain $T^{(3)}$. It can be checked that both $T^{(1)}$ and $T^{(3)}$ are  Schubert compatible.
+See Figure~\ref{fig:ReadingOrder} for an example of a Schubert-compatible filling $T$ and the fillings $T^{(1)}$ and $T^{(3)}$. When constructing $T^{(3)}$, the cells labeled by $7,13,14$, and $16$ are deleted, and rows $1,2$ and $4$ are shifted left by one unit. The cells are relabeled as follows: $\fl_T^{(3)}(8)=7$, $\fl_T^{(3)}(9) = 8$, $\fl_T^{(3)}(10) = 9$, $\fl_T^{(3)}(11)=10$, $\fl_T^{(3)}(12) = 11$, and $\fl_T^{(3)}(15)=12$. Then rows $3$ and $4$ are swapped to obtain $T^{(3)}$. It can be checked that both $T^{(1)}$ and $T^{(3)}$ are  Schubert compatible.
 
 \begin{lemma}
 If $i \leq \ell(\lambda)$, then $T^{(i)}$ is $(n-1,\lambda^{(i)},s)$-Schubert compatible. If $i > \ell(\lambda)$, then $T^{(i)}$ is $(n-1,\lambda,s)$-Schubert compatible.
@@ -732,7 +732,7 @@ Suppose $n>1$. By Lemma~\ref{lem:RHilbRecursion} and Corollary~\ref{cor:CohHilbR
 \end{proof}
 
 \begin{lemma}\label{lem:Embedding}
-Let $T$ be a $(n,\la,s)$-Schubert compatible filling of $\Lambda(n,\la,s)$, and let $T'$ be a $(n,\emptyset,s)$-Schubert compatible filling of $\Lambda(n,\emptyset,s) = (n^s)$ such that every entry of the $i$th row of $T$ is in the $i$th row of $T'$. Then the linear map $j : \bC^K \hookrightarrow \bC^{ns}$, which is the inclusion of the first $K$ coordinates, induces a closed embedding 
+Let $T$ be a $(n,\la,s)$-Schubert-compatible filling of $\Lambda(n,\la,s)$, and let $T'$ be a $(n,\emptyset,s)$-Schubert-compatible filling of $\Lambda(n,\emptyset,s) = (n^s)$ such that every entry of the $i$th row of $T$ is in the $i$th row of $T'$. Then the linear map $j : \bC^K \hookrightarrow \bC^{ns}$, which is the inclusion of the first $K$ coordinates, induces a closed embedding 
 \begin{align}
 \iota : Y_{n,\la,s,T}\hookrightarrow Y_{n,\emptyset,s,T'},
 \end{align}
@@ -963,7 +963,7 @@ In this section, we analyze the variety $Y_{n,\lambda,s}$ in the case when $\lam
 For all $i\leq n$, let $\widetilde V_i$ be the tautological rank $i$ vector bundle on $\Fl_{(1^n)}(\bC^{ns})$ for $i\leq n$. We abuse notation and also denote by $\widetilde V_i$ the restriction of $\widetilde V_i$ to the subvariety $Y_{n,\emptyset,s}$. 
 
 \begin{lemma}\label{lem:ProjectiveBundle}
-Let $T$ be a $(n,\emptyset,s)$-Schubert compatible filling such that the labels in the first column are $n(s-1)+1,\dots, ns$ in some order, and let $T'$ be the result of deleting the first column of $T$. Then the map
+Let $T$ be a $(n,\emptyset,s)$-Schubert-compatible filling such that the labels in the first column are $n(s-1)+1,\dots, ns$ in some order, and let $T'$ be the result of deleting the first column of $T$. Then the map
 \begin{align}\label{eq:ForgettingMap}
 Y_{n,\emptyset,s,T} \rightarrow Y_{n-1,\emptyset,s,T'},
 \end{align}
@@ -1133,7 +1133,7 @@ The proof is an application of (S6), similar to the proof of Lemma~\ref{lem:S6}.
 
 
 \begin{lemma}\label{lem:TechnicalLemmaUnipotent}
-Let $T$ be a Schubert compatible filling with the property that $T(i',j')>T(i,j)$ if $j'<j$. Let $w$ be admissible with respect to $T$, and let $V_\bullet\in Y_{n,\la,s,T}\cap C_w$. For all $p\leq n$, let $v_p$ be a vector in $V_p\setminus V_{p-1}$ whose $f_{w(p)}$ coefficient is $1$. Then there exists a unipotent upper triangular matrix $U$ such that 
+Let $T$ be a Schubert-compatible filling with the property that $T(i',j')>T(i,j)$ if $j'<j$. Let $w$ be admissible with respect to $T$, and let $V_\bullet\in Y_{n,\la,s,T}\cap C_w$. For all $p\leq n$, let $v_p$ be a vector in $V_p\setminus V_{p-1}$ whose $f_{w(p)}$ coefficient is $1$. Then there exists a unipotent upper triangular matrix $U$ such that 
 \begin{align}\label{eq:UnipotentEq1}
 U f_{w(p)} = v_p
 \end{align}
@@ -1176,7 +1176,7 @@ Suppose $i\neq i_p$ for all $p$. Recall that we have defined $Uf_{T(i,j)} = f_{T
 
 
 \begin{lemma}\label{lem:FiberBundle}
-The map $\pi$ is surjective. For $T$ a Schubert compatible filling and $w$ admissible,
+The map $\pi$ is surjective. For $T$ a Schubert-compatible filling and $w$ admissible,
 \begin{align}\label{eq:FiberBundleIso}
 \pi^{-1}(C_{w}\cap Y_{n,\la,s,T}) \cong (C_{w}\cap Y_{n,\la,s,T})\times \cB_{(s-1)^{n-k}}^{\Lambda'},
 \end{align}
@@ -1273,7 +1273,7 @@ Since both of these rings are free $\bZ$-modules and have the same rank generati
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Irreducible components and a generalization of the Springer correspondence}\label{sec:IrreducibleComponents}
+\section{Irreducible components and a generalization of the \\Springer correspondence}\label{sec:IrreducibleComponents}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -1282,12 +1282,13 @@ In this section, we characterize the irreducible components of $Y_{n,\la,s}$, an
 
 Given a subspace $W\subseteq \bC^K$ such that $N_\Lambda W\subseteq W$, then $N_\Lambda(W\cap F_k)\subseteq W\cap F_k$. The nilpotent operator $N_\Lambda$ thus induces a nilpotent operator on the quotient space $F_k/(W\cap F_k)$, which we denote by $N_\Lambda|_{F_k/(W\cap F_k)}$.
 
-Suppose $T$ is a filling of the Young diagram of $\lambda$ with a $k$-element subset of $[n]$ such that the labels decrease from left to right across each row. Let $T|_{n,\dots, n-i+1}$ be the restriction of $T$ to the cells containing the labels $n,\dots, n-i+1$. Furthermore, let $\mathrm{sh}(T|_{n,\dots, n-i+1})$ be the partition obtained by recording the row sizes of $T|_{n,\dots, n-i+1}$ and then sorting them to a partition.
-Given such a filling $T$ that also decreases down each column, define the following subset of $Y_{n,\la,s}$,
+Suppose $S$ is a filling of $[\lambda]$ with a $k$-element subset of $[n]$ such that the labels decrease from left to right across each row. Let $S|_{n,\dots, n-i+1}$ be the restriction of $S$ to the cells containing the labels $n,\dots, n-i+1$. Furthermore, let $\mathrm{sh}(S|_{n,\dots, n-i+1})$ be the partition obtained by recording the row sizes of $S|_{n,\dots, n-i+1}$ and then sorting them to a partition.
+Given such a filling $S$ that also decreases down each column, define the following subspace of $Y_{n,\la,s,T}$,
 \begin{align}
-Y_{n,\la,s}^{T} = \{V_\bullet \in Y_{n,\la,s} \st N|_{\bC^\lambda/(V_i\cap \bC^\lambda)}\text{ has Jordan type }\mathrm{sh}(T|_{n,\dots,n-i+1})\text{ for all }i\}.
+Y_{n,\la,s,T}^{S} = \{V_\bullet \in Y_{n,\la,s,T} \st N|_{\bC^\lambda/(V_i\cap \bC^\lambda)}\text{ has Jordan type }\mathrm{sh}(S|_{n,\dots,n-i+1})\text{ for all }i\}.
 \end{align}
 
+Given an admissible $w$, let $S(w)$ be the filling of $[\la]$ defined by $S(i,j) = w^{-1}(T(i,j))$ for each $(i,j)\in [\la]$. See Figure~\ref{fig:SOfw} for an example of $S(w)$ where $\Lambda = $\SG{Continue here}
 
 \begin{lemma}
 \label{lem:Jordan}
@@ -1471,6 +1472,14 @@ In order to finish the proof, it must be checked that the composition of the iso
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Future Work}\label{sec:FutureWork}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{question}
+  The variety $Y_{n,\la,s}$ is simulaneously the projective image of a Spaltenstein variety and a closed subvariety of a Steinberg variety,
+  \[
+\cB_{(1^n,s-1,\dots,s-1)}^\Lambda \twoheadrightarrow Y_{n,\la,s}\hookrightarrow \mathrm{Stein}_{(1^n,(s-1)(n-k)),\Lambda}.
+\]
+The Steinberg varieties are fibers of partial resolutions of the nilpotent cone~\cite{Goresky-Macpherson}, and Spaltenstein varieties have connections to representations of the general linear groups~\cite{Braverman-Gaitsgory}, crystals~\cite{Malik} and quiver varieties~\cite{Nakajima1,Nakajima2}. How do the varieties $Y_{n,\la,s}$ fit into these settings?
+\end{question}
 
 \begin{question}
 There is a $s$-dimensional torus action on $Y_{n,\la,s}$, given by scaling the vectors in each generalized eigenspace of $N$ by the same constant. The space $Y_{2,\emptyset,2}$ is not a GKM variety because it does not have finitely many one-dimensional orbits with respect to this action. Is it still possible to compute its equivariant cohomology ring? Brundan and Ostrik reference Goresky-Macpherson's characterization of equiv cohomology of Springer fibers in terms of subspace arrangements, and extensions of those results.
