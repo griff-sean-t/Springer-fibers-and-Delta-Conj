@@ -13,45 +13,45 @@ Warning--I didn't find a database entry for "Nakajima2"
 Warning--empty booktitle in BGHT
 Warning--can't use both volume and number fields in BGHT
 Warning--empty publisher in BGHT
-You've used 23 entries,
+You've used 22 entries,
             2068 wiz_defined-function locations,
-            681 strings with 7326 characters,
-and the built_in function-call counts, 8187 in all, are:
-= -- 824
-> -- 265
+            675 strings with 7236 characters,
+and the built_in function-call counts, 7978 in all, are:
+= -- 810
+> -- 258
 < -- 0
-+ -- 114
-- -- 83
-* -- 587
-:= -- 1186
-add.period$ -- 27
-call.type$ -- 23
-change.case$ -- 110
++ -- 111
+- -- 81
+* -- 575
+:= -- 1151
+add.period$ -- 26
+call.type$ -- 22
+change.case$ -- 107
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 406
-empty$ -- 674
-format.name$ -- 83
-if$ -- 1806
+cite$ -- 25
+duplicate$ -- 392
+empty$ -- 649
+format.name$ -- 81
+if$ -- 1762
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 20
-newline$ -- 76
-num.names$ -- 43
-pop$ -- 121
+int.to.str$ -- 22
+missing$ -- 18
+newline$ -- 73
+num.names$ -- 41
+pop$ -- 112
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 86
 quote$ -- 0
-skip$ -- 355
+skip$ -- 350
 stack$ -- 0
-substring$ -- 649
-swap$ -- 174
+substring$ -- 644
+swap$ -- 172
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
+type$ -- 88
 warning$ -- 3
-while$ -- 91
-width$ -- 25
-write$ -- 213
+while$ -- 89
+width$ -- 24
+write$ -- 205
 (There were 10 warnings)

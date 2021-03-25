@@ -43,7 +43,7 @@
 \newcommand{\ufl}{\mathrm{ufl}}
 \newcommand{\inv}{\mathrm{inv}}
 \newcommand{\Hom}{\mathrm{Hom}}
-
+\newcommand{\sh}{\mathrm{sh}}
 
 
 
@@ -460,7 +460,7 @@ See Figure~\ref{fig:Lambda} for an illustration of $[\Lambda]$ and $[\lambda]$, 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{LambdaExMain.eps}
+    \includegraphics[width=0.7\textwidth]{Figures/LambdaExMain.pdf}
     \caption{The Young diagram $[\Lambda]$, which has a copy of $[\lambda]$ in the upper right corner, highlighted in bold. The cells in the right edge of $[\Lambda]$ are shaded.
     %The maximal cells correspond to flags inducing a particular Jordan type on the nilpotent operator $N$.
     }
@@ -498,7 +498,7 @@ If $n$, $\lambda$, and $s$ are obvious from context, we will simply say $T$ is {
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{SchubertCompatible.eps}
+    \includegraphics[width=0.7\textwidth]{Figures/SchubertCompatible.pdf}
     \caption{A Schubert-compatible filling $T$ of $\Lambda(5,(2,1),3)$, and the action of $N_T$ on the basis vectors.}
     \label{fig:SchubertCompatible}
 \end{figure}
@@ -565,9 +565,9 @@ Since the operations of deleting a cell, applying the flattening function to the
 
 
 
-\begin{figure}
+\begin{figure} 
     \centering
-    \includegraphics[width=0.7\textwidth]{ReadingOrder.eps}
+    \includegraphics[width=0.7\textwidth]{Figures/ReadingOrder.pdf}
     \caption{The Schubert-compatible filling $T$ of $[\Lambda] = [\Lambda(7,(2,2),4)]$ determined by reading order and the fillings $T^{(1)}$ and $T^{(3)}$, which are also Schubert compatible.}
     \label{fig:ReadingOrder}
 \end{figure}
@@ -644,7 +644,7 @@ Likewise, we have
 \begin{align}
     N_T U_v f_{T(i,q)} = N_T f_{T(i,q)} + N_T(N_T^t)^{\Lambda_i-q}v 
 \end{align}
-If $q=\Lambda_i$, then this is equal to $N_Tv = 0$. Otherwise, $q<\Lambda_i$ and we have
+
 \begin{align}
     N_T U_v f_{T(i,q)} = N_T f_{T(i,q)} + (N_T N_T^t) (N_T^t)^{\Lambda_i-q-1}v = f_{T(i,q+1)} + (N_T^t)^{\Lambda_i-q-1}v,
 \end{align}
@@ -708,6 +708,35 @@ If $T$ is Schubert compatible, then the intersections $C_w\cap Y_{n,\la,s,T}$ fo
 \begin{proof}
 Since the Schubert cells $C_w$ are the cells of an affine paving of $\Fl_{(1^n)}(\bC^K)$, it suffices to show that each nonempty intersection $C_w\cap Y_{n,\la,s,T}$ is isomorphic to an affine space $\bC^d$ for some $d$. By Lemma~\ref{lem:CellRecursion}, $C_w\cap Y_{n,\la,s,T}$ is nonempty if and only if $w$ is admissible. We proceed by induction on $n$ to show that each of these intersection is an affine space. In the base case when $n=1$, either $\lambda =\emptyset$ or $\lambda = (1)$. In the first case, $Y_{1,\emptyset,s,T} = \bP^{s-1}$ for any Schubert-compatible $T$, the admissible $w$ are in bijection with $[s]$, and the nonempty intersections $C_w\cap Y_{1,\emptyset,s,T}$ can be identified with usual cells of $\bP^{s-1}$. In the second case, $Y_{1,(1),s,T}$ is a point, and the only nonempty intersection is a point. The inductive proof then follows by applying Lemma~\ref{lem:CellRecursion}.
 \end{proof}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[scale=0.6]{Figures/RowDecreasingBijection.pdf}
+  \caption{With $T$ as in Figure~\ref{fig:ReadingOrder}, an example of the bijective correspondence in the proof of Theorem~\ref{thm:AffinePavingY}.\label{fig:FillingBijectionExample}}
+\end{figure}
+
+\begin{corollary}\label{cor:AffinePavingFillings}
+The cells in an affine paving of $Y_{n,\la,s,T}$ are in bijection with partial fillings of $[\Lambda]$ that decrease from left to right along each row and such that the labels in each row are right justified and every cell of $[\lambda]$ is filled.
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:AffinePavingY}, the cells in an affine paving of $Y_{n,\la,s,T}$ are in bijection with injective functions $w$ that are admissible with respect to $T$. The admissible injective functions are in bijection with the set of partial fillings in the statement of the corollary under the following map. Given an admissible $w$, for $1\leq i\leq n$, if $w(i) = T(a,b)$, then label the cell $(a,b)$ of $\Lambda$ with $w(i)$. It can be checked that this defines a bijection between the two sets. See Figure~\ref{fig:FillingBijectionExample} for an example of this correspondence.
+\end{proof}
+
+
+
+\begin{remark}
+  Recall that in the case where $\la=(1^k)$ and $s=k$, the ring $R_{n,\la,s}$ specializes to the Haglund--Rhoades--Shimozono ring, $R_{n,(1^k),k} \cong R_{n,k}$. This ring has a $\bZ$-basis indexed by \emph{ordered set partitions}, which are partitions of the set $[n]$ into a $k$-tuple of nonempty blocks $(B_1,\dots, B_k)$. Part of the motivation that led us to define the variety $Y_{n,\la,s}$ was the following bijection between ordered set partitions and cells of $Y_{n,(1^k),k}$. Fix a Schubert compatible $T$. Given $w$ admissible with respect to $T$, let $P$ be the partial filling of $[\Lambda]$ corresponding to $w$ under the bijection defined in the proof of Theorem~\ref{cor:AffinePavingFillings}. Map $P$ to the ordered set partition $(B_1,\dots, B_k)$ where block $B_i$ is defined to be the set of labels in the $i$th row of $P$. It can be checked that this map defines the desired bijection. Hence, the total rank of $H^*(Y_{n,(1^k),k})$ is equal to the rank of $R_{n,k}$.
+
+  For example, let $n=6$ and $k=3$, and let $T$ be the Schubert-compatible filling of $\Lambda(5,(1^2),2)$ according to reading order,
+  \[
+    \includegraphics[scale=0.6]{Figures/OSPSchubertCompatible.pdf}
+  \]
+  Then the image of $w=253618$ under this correspondence is
+  \[
+    \includegraphics[scale=0.6]{Figures/OSPBijection.pdf} 
+  \] 
+\end{remark}
 
 \begin{corollary}\label{cor:CohHilbRecursion}
 We have
@@ -1282,41 +1311,104 @@ In this section, we characterize the irreducible components of $Y_{n,\la,s}$, an
 
 Given a subspace $W\subseteq \bC^K$ such that $N_\Lambda W\subseteq W$, then $N_\Lambda(W\cap F_k)\subseteq W\cap F_k$. The nilpotent operator $N_\Lambda$ thus induces a nilpotent operator on the quotient space $F_k/(W\cap F_k)$, which we denote by $N_\Lambda|_{F_k/(W\cap F_k)}$.
 
-Suppose $S$ is a filling of $[\lambda]$ with a $k$-element subset of $[n]$ such that the labels decrease from left to right across each row. Let $S|_{n,\dots, n-i+1}$ be the restriction of $S$ to the cells containing the labels $n,\dots, n-i+1$. Furthermore, let $\mathrm{sh}(S|_{n,\dots, n-i+1})$ be the partition obtained by recording the row sizes of $S|_{n,\dots, n-i+1}$ and then sorting them to a partition.
-Given such a filling $S$ that also decreases down each column, define the following subspace of $Y_{n,\la,s,T}$,
+Let $\mathcal{P}(n,\lambda)$ be the set of fillings of $[\lambda]$ with distinct entries from $[n]$ that decreases left to right along each row and down each column. Given $S\in \mathcal{P}(n,\la)$, let $S|_{n-i+1,\dots,n}$ be the restriction of $S$ to the cells that contain a label from the set $\{n-i+1,\dots,n\}$. Furthermore, let $\mathrm{sh}(S|_{n-i+1,\dots, n})$ be the partition obtained by recording the row sizes of $S|_{n-i+1,\dots, n}$ in order from largest to smallest. Given $i\leq s$, define $S^{(i)}$ to be the result of deleting $1$ from $S$ (if it appears) and then decrementing each of the remaining labels by $1$.
+
+For $S\in \mathcal{P}(n,\la)$, define the following subspace of $Y_{n,\la,s,T}$,
 \begin{align}
-Y_{n,\la,s,T}^{S} = \{V_\bullet \in Y_{n,\la,s,T} \st N|_{\bC^\lambda/(V_i\cap \bC^\lambda)}\text{ has Jordan type }\mathrm{sh}(S|_{n,\dots,n-i+1})\text{ for all }i\}.
+Y_{n,\la,s,T}^{S} = \{V_\bullet \in Y_{n,\la,s,T} \st N_\Lambda|_{F_k/(V_i\cap F_k)}\text{ has Jordan type }\mathrm{sh}(S|_{n-i+1,\dots,n})\text{ for all }i\}.
 \end{align}
 
-Given an admissible $w$, let $S(w)$ be the filling of $[\la]$ defined by $S(i,j) = w^{-1}(T(i,j))$ for each $(i,j)\in [\la]$. See Figure~\ref{fig:SOfw} for an example of $S(w)$ where $\Lambda = $\SG{Continue here}
+Given a Schubert compatible $T$ and an admissible $w$, let $S(w)$ be the filling of $[\la]$ defined by $S(i,j) = w^{-1}(T(i,j))$ for each $(i,j)\in [\la]$. Note that $S(w)$ also depends on $T$, but we suppress this in the notation for convenience. See Figure~\ref{fig:SOfw} for an example of $S(w)$ where $n=5$, $\la = (2,1)$, $s=3$, and $w=16243$. Given two fillings $S$ and $S'$ of $[\la]$, we say they are \emph{column equivalent} if for each $i$, the set of labels in the $i$th column of $S$ is equal to the set of labels in the $i$th column of $S'$.
 
-\begin{lemma}
-\label{lem:Jordan}
-Each subvariety $Y_{n,\la,s}^{T}$ is an irreducible locally-closed union of cells from the affine paving.
-If $s>\ell(\la)$, then each $Y_{n,\la,s}^{T}$ is nonempty. If $s = \ell(\la)$, then $Y_{n,\la,s}^{T}$ is nonempty if and only if for all $i$, if $T$ does not contain $i$ as a label then the labels up to $i-1$ fill at least one row of $\lambda$. Furthermore, if $Y_{n,\la,s}^{T}$ is nonempty, then
-\begin{align}\label{eq:DimFormulaForCmpt}
-\dim_\bC(Y_{n,\la,s}^{T}) = n(\la) + (n-k)(s-1).
-\end{align}
-The $Y_{n,\la,s}^{T}$ give a partition of $Y_{n,\la,s}$ as we consider all possible choices for $T$.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{Figures/SOfw.pdf}
+  \caption{An example of $S(w)$ when $T$ is as shown, where $n=5$, $\la=(2,1)$, $s=3$, and $w=16243$.\label{fig:SOfw}} 
+\end{figure}
+
+\begin{lemma}\label{lem:IrredSubspaceUnion}
+  For $S\in \mathcal{P}(n,\la)$, we have
+  \begin{align}
+    Y_{n,\la,s,T}^S = \bigsqcup_{\substack{w\text{ admissible},\\ S(w) \text{ column equivalent to }S}} C_w \cap Y_{n,\la,s,T}.
+  \end{align}
+
+  \begin{proof}
+    For $w$ admissible, it can be checked by induction that the row-decreasing filling $S(w)$ is column equivalent to a unique element of $\mathcal{P}(n,\la)$. Since the cells $C_w\cap Y_{n,\la,s,T}$ partition $Y_{n,\la,s,T}$, it suffices to show the containment $C_w\cap Y_{n,\la,s,T}\subseteq Y_{n,\la,s,T}^S$ for the unique $S\in\mathcal{P}(n,\la)$ that is column equivalent to $S(w)$. Since $S$ and $S(w)$ are column equivalent, then $\sh(S|_{n-i+1,\dots, n}) = \sh(S(w)|_{n-i+1,\dots, n})$ for all $i\leq n$.
+
+    Let $E_\bullet$ be the flag in $C_w\cap Y_{n,\la,s,T}$ defined by $E_i = \{f_{w(1)},\dots, f_{w(i)}\}$. It is easily checked that $N|_{F_k/E_i\cap F_k}$ has Jordan type $\sh(S(w)|_{n-i+1,\dots, n}) = \sh(S|_{n-i+1,\dots, n})$, so $E_\bullet\in Y_{n,\la,s,T}^S$. Let $i\leq s$ such that $w(1) = T(i,\Lambda_i)$. Recall from the proof of Lemma~\ref{lem:CellRecursion} that we have a map
+    \[
+      \Phi : \vspan\{f_{T(j,\Lambda_j)}\st j<i\}\times (C_{\fl_T^{(i)}(w)}\cap Y_{T^{(i)}}) \to C_w \cap Y_T.
+      \]
+      defined by
+      \[
+        \Phi(v,V_\bullet) = U_v(\langle f_{w(1)}\rangle, \langle f_{w(1)}\rangle + \psi^{(i)} (V_1),\dots, \langle f_{w(1)}\rangle + \psi^{(i)}(V_{n-1})).
+      \]
+      If $i>\ell(\la)$, then $N_T|_{F_k/(V_i\cap F_k)} = N_{T^{(i)}}|_{F_k/(V_{i-1}\cap F_k)}'$ and $S^{(i)} = S$, and we are done by induction.
+
+      Otherwise, $i\leq\ell(\la)$, and we know by induction that for all $j$, $N_{T^{(i)}}|_{F_{k-1}/(V_j\cap F_{k-1})}$ has Jordan type $\sh(S^{(i)}|_{n-1,\dots, n-j})$. Now, we have
+      \begin{align}
+        N_T|_{F_k/(F_k\cap U_v(\langle f_{w(1)}\rangle + \psi^{(i)}(V_{j-1})))} = N_T |_{U_v(F_k/(F_k\cap (\langle f_{w(1)}\rangle + \psi^{(i)}(V_{j-1}))))}.
+      \end{align}
+      Since $U_v N_T = N_T U_v$, this map has the same Jordan type as $N_T|_{F_k/(F_k\cap (\langle f_{w(1)}\rangle + \psi^{(i)}(V_{j-1})))}$, which has the same Jordan type as $N_{T^{(i)}}|_{F_{k-1}/(F_{k-1}\cap V_{j-1})}$, which by our inductive hypothesis has Jordan type $\sh(S^{(i)}|_{n-j+1,\dots, n-1}) = \sh(S|_{n-j+1,\dots, n})$. Thus, the induction is complete.
+    \end{proof}
+
+    \begin{lemma}\label{lem:IrreducibleNonempty}
+      Let $S\in \mathcal{P}(n,\la)$. Then the subspace $Y_T^S$ is nonempty if and only if either $s>\ell(\la)$, or $s=\ell(\la)$ and for all $i\leq n$ not in $S$ the labels of $S$ up to $i-1$ fill at least one row of $[\la]$.
+    \end{lemma}
+
+    \begin{proof}
+            It can be checked that there exists an admissible $w$ that is column equivalent to $S$ if and only if the conditions in the statement of the lemma hold. Therefore, by Lemma~\ref{lem:IrredSubspaceUnion}, these are exactly the conditions for when $Y_T^S$ is nonempty.
+    \end{proof}
+
+    \begin{lemma}\label{lem:IrreducibleDimension}
+      Let $S\in \mathcal{P}(n,\la)$. When $Y_T^S$ is nonempty, it is smooth and connected of dimension $n(\la) + (n-k)(s-1)$.
+    \end{lemma}
+
+    \begin{proof}
+      Let $S\in \mathcal{P}(n,\la)$ that satisfies the conditions in the statement of Lemma~\ref{lem:IrreducibleNonempty}.  If $S$ contains the label $1$, let $(i,j)$ be the cell of $[\la]$ containing it. Otherwise, let $(i,j) = (s,n-k)$. It can be checked that $S^{(i)}$ satisfies the conditions in the statement of Lemma~\ref{lem:IrreducibleNonempty}, so $Y_{T^{(i)}}^{S^{(i)}}$ is nonempty. We have a surjective map $\pi$,
+      \begin{align}
+        Y_T^S \xrightarrow{\pi} \bP(\vspan\{f_{T(h,\Lambda_h)} \st h\leq i\}) \setminus \bP(\vspan\{f_{T(h,\Lambda_h)}\st h\leq \Lambda_{j+1}'\}).
+      \end{align}
+      defined by sending $V_\bullet$ to $V_1$. Let
+      \begin{align}
+        U \coloneqq \bP(\vspan\{f_{T(h,\Lambda_h)} \st h\leq i\}) \setminus \bP(\vspan\{f_{T(h,\Lambda_h)}\st h < i\}).
+      \end{align}
+      Assume by induction on $n$ that $Y_{T^{(i)}}^{S^{(i)}}$ are smooth and connected with dimension $n(\la^{(i)})+(n-k)(s-1)$ for $i\leq \ell(\la)$ and $n(\la)+(n-k-1)(s-1)$ for $i>\ell(\la)$.  Using Lemma~\ref{lem:IrredSubspaceUnion}, it can be checked that the isomorphisms $\Phi$ in the proof of Lemma~\ref{lem:CellRecursion} can be combined into an isomorphism
+      \begin{align}
+        U\times Y_{T^{(i)}}^{S^{(i)}} \to \pi^{-1}(U).
+      \end{align}
+     Thus, by the inductive hypothesis, the open subset $\pi^{-1}(U)$ of $Y_T^S$ is smooth and connected. Its dimension is
+      \begin{align}
+        \dim(U) + \dim(Y_{T^{(i)}}^{S^{(i)}}) &= (i-1) + \begin{cases} n(\la^{(i)}) + (n-k)(s-1) & i\leq \ell(\la)\\ n(\la) + (n-k-1)(s-1) & i>\ell(\la)\end{cases}\\
+        &= n(\la) + (n-k)(s-1).
+      \end{align}
+      Given $\Lambda_{j+1}'+1\leq i' \leq i$, we have an open subset
+      \begin{align}
+        U_{i'} = \bP(\vspan\{f_{T(h,\Lambda_h)}\st h\leq i\})\setminus \bP(\vspan\{f_{T(h,\Lambda_h)}\st h\leq i, h\neq i'\})
+      \end{align}
+      of the codomain of $\pi$. By a similar construction as above, there is an isomorphism
+      \begin{align}
+        U_{i'}\times Y_{T^{(i)}}^{S^{(i)}}\to \pi^{-1}(U_{i'})
+      \end{align}
+      for each of these open subsets that cover $Y_T^S$, so $\pi^{-1}(U_{i'})$ is smooth of the same dimension. Since $Y_T^S$ is covered by smooth connected open subspaces of dimension $n(\la)+(n-k)(s-1)$, it follows that $Y_T^S$ is smooth of dimension $n(\la)+(n-k)(s-1)$. Since each $\pi^{-1}(U_{i'})$ is connected, and the intersection of these subspaces is nonempty intersection, then $Y_T^S$ is connected. The base case $n=1$ of the induction is trivial to check, so the proof is complete.
+    \end{proof}
+
 \end{lemma}
 
+
+
 \begin{theorem}
-The space $Y_{n,\la,s}$ is equidimensional of dimension $n(\la) + (n-k)(s-1)$.  In particular, the closed subvarieties $\overline{Y_{n,\la,s}^{T}}$ for which $Y_{n,\la,s}^{T}$ is nonempty (as described in Lemma \ref{lem:Jordan}) form a complete set of irreducible components. In the case $s>\ell(\la)$, there are $\binom{n}{k}\cdot \#\SYT(\la)$ many irreducible components.
+The space $Y_{n,\la,s,T}$ is equidimensional of dimension $n(\la) + (n-k)(s-1)$. In particular, the closed subvarieties $\overline{Y_{n,\la,s,T}^{S}}$ for which $Y_{n,\la,s,T}^{S}$ is nonempty (as described in~Lemma \ref{lem:IrreducibleNonempty}) form a complete set of irreducible components. In the case $s>\ell(\la)$, there are $\binom{n}{k}\cdot \#\SYT(\la)$ many irreducible components.
 \end{theorem}
 
-For each cell in the affine paving, the filling $T$ can be obtained from the partial filling of $\Lambda$ by restricting the labeling to the upper right copy of $\lambda$ contained in $\Lambda$, as depicted in Figure~\ref{fig:Lambda}.
+\begin{proof}
+By Lemma~\ref{lem:IrreducibleDimension}, the nonempty subspaces $Y_{n,\la,s,T}^S$ are smooth and connected of dimension $n(\la)+(n-k)(s-1)$. Therefore, $Y_{n,\la,s,T}^S$ is irreducible. Since the subspaces $Y_{n,\la,s,T}^S$ partition the space $Y_{n,\la,s,T}$, their closures form a complete set of irreducible components. When $s>\ell(\la)$, the irreducible components are thus in bijection with $\mathcal{P}(n,\la)$, which has cardinality $\binom{n}{k}\cdot \#\SYT(\la)$. This can be seen explicitly by relabeling $S$ by replacing each label $i$ with $n-i+1$ to get a row and column increasing tableau on $[\lambda]$ whose labels are chosen from a $k$-element subset of $[n]$.
+\end{proof}
 
-\begin{example}
-For the filling in Figure \ref{fig:Filling}, the corresponding filling of $\lambda$ is
-\[\young(21,4),\]
-and the Jordan types of the operators $N|_{\bC^\lambda/(V_i\cap \bC^\lambda)}$ for $i=1,2,3,4,5$ are
-\[
-{\small \yng(1,1)}\supset {\small \yng(1)}\supset {\small \yng(1)}\supset \emptyset \supset \emptyset.
-\]
-Notice that the filling was not column-strict; accordingly, the row lengths corresponding to the Jordan type of $N|_{\bC^\lambda/(V_2\cap \bC^\lambda)}$ are $(0, 1)$ (corresponding to the entry $4 \in \lambda$), but become $(1, 0)$ after sorting.
-\end{example}
 
-In the case $s>\ell(\la)$, the irreducible components are naturally indexed by Standard Young Tableaux on $(n-k) \cup \la$.  This indexing of irreducible components extends to a representation theory statement on the top cohomology group of $Y_{n,\lambda,s}$, generalizing Springer's theorem that the top cohomology group of a Springer fiber is a Specht module.
+
+In the case $s>\ell(\la)$, the irreducible components are naturally indexed by Standard Young Tableaux on $\la \cup (n-k)$.  This indexing of irreducible components extends to a representation theory statement on the top cohomology group of $Y_{n,\lambda,s}$, generalizing Springer's theorem that the top cohomology group of a Springer fiber is a Specht module.
  
 
 \begin{theorem}
@@ -1331,64 +1423,11 @@ For $s=\ell(\la)$, we have
 the Specht module of skew shape $\Lambda/(n-k)^{s-1}$.
 \end{theorem}
 
-In the case of $s>\ell(\la)$, the proof follows by combining Theorem~\ref{thm:MainTheorem} and the fact that, in this case, the top degree component of $R_{n,\lambda,s}$ is isomorphic to $\mathrm{Ind}\!\!\uparrow_{S_k}^{S_n}(S^\lambda)$~\cite[Corollary 3.3.15]{GriffinThesis}. In the case of $s=\ell(\la)$, the proof follows by combining Theorem~\ref{thm:MainTheorem} with the formula \cite[Theorem 5.13]{GriffinOSP} for $\Frob(R_{n,\lambda,s};q)$ and then using bijective techniques to show that the top degree component of this symmetric function is the skew Schur function $s_{\Lambda/(n-k)^{s-1}}(x)$.
-
-
-\section{Old Stuff}
-
-
-
-
-Given a sequence of partitions $\mu^\bullet = (\emptyset\subseteq \mu^{1}\subseteq \mu^{2}\subseteq \cdots \subseteq \mu^{n})$ such that $\mu^{i}/\mu^{i-1}$ consists of at most one box for all $i$, define the following subset of $Y_{n,\la,s}$,
-\begin{align}
-Y_{n,\la,s}^{\mu^\bullet} = \{V_\bullet \in Y_{n,\la,s} \st N|_{V_i\cap \im(N^{n-k})}\text{ has Jordan type }\mu^{i}\}.
-\end{align}
-
-\begin{lemma}
-The subspaces $Y_{n,\la,s}^{\mu^\bullet}$ form a partition of $Y_{n,\la,s}$ into irreducible subspaces. If $s>\ell(\la)$, then $Y_{n,\la,s}^{\mu^\bullet}$ is nonempty if and only if $\mu^{n} = \la$. If $s = \ell(\la)$, then $Y_{n,\la,s}^{\mu^\bullet}$ is nonempty if and only if we have that $\mu^{n} = \la$ and $\mu^{i} = \mu^{i+1}$ implies $\mu^{i}_s = \la_s$. Furthermore, if $Y_{n,\la,s}^{\mu^\bullet}$ is nonempty, then
-\begin{align}\label{eq:DimFormulaForCmpt}
-\dim_\bC(Y_{n,\la,s}^{\mu^\bullet}) = n(\la) + (n-k)(s-1).
-\end{align}
-\end{lemma}
 
 \begin{proof}
-If $V_\bullet\in C_{(i_1,\dots, i_n)}$, then the Jordan type of $N|_{V_j\cap \im(N^{n-k})}$ is $\la^{(i_{j+1},\dots, i_n)}$. Therefore,
-\begin{align}
-Y_{n,\la,s}^{\mu^\bullet} = \bigsqcup_{(i_1,\dots, i_n)} C_{(i_1,\dots, i_n)}
-\end{align}
-where the union is over all sequences $(i_1,\dots, i_n)$ such that $\mu^{j} = \la^{(i_{j+1},\dots, i_n)}$ for $0\leq j \leq n$. It can then be seen from this that $Y_{n,\la,s}^{\mu^\bullet}$ is a product of projective spaces and affine spaces, hence it is irreducible. Furthermore, $Y_{n,\la,s}^{\mu^\bullet}$ is nonempty if and only if there exists at least one such sequence $(i_1,\dots, i_n)$. If $s>\ell(\la)$, the existence of such a sequence is equivalent to $\mu^n = \la$. If $s=\ell(\la)$, then the existence of such a sequence is equivalent to $\mu^n=\la$ and $\mu^i = \mu^{i+1}$ implies $\mu^i_s = \la_s$.
+The case when $s>\ell(\lambda)$ follows immediately by combining Theorem~\ref{thm:MainTheorem} with \cite[Corollary 3.3.15]{GriffinThesis}, which says that the top degree component of $R_{n,\lambda,s}$ is isomorphic as an $S$-module to $\mathrm{Ind}\!\uparrow_{S_k}^{S_n}~\!(S^\lambda)$.
 
-Suppose that $Y_{n,\la,s}^{\mu^\bullet}$ is nonempty, and recall that $\dim_\bC (C_{(i_1,\dots, i_n)}) = \sum_{j\leq n} (i_j-1)$. Then the dimension of $Y_{n,\la,s}^{\mu^\bullet}$ is the maximum of $\sum_{j\leq n} (i_j-1)$ over all $(i_1,\dots, i_n)$ such that $\mu^{j} = \la^{(i_{j+1},\dots, i_n)}$ for all $0\leq j \leq n$. To verify the dimension formula~\eqref{eq:DimFormulaForCmpt}, first observe that $\sum_{j\leq n}(i_j-1)$ is maximal if and only if the following two conditions hold.
-\begin{itemize}
-\item Whenever $\mu^j/\mu^{j-1}$ is a single box, then $i_j$ is the row index of the lowest box in that column of $\mu^j$,
-\item Whenever $\mu^j/\mu^{j-1}$ is empty, then $i_j = s$.
-\end{itemize}
-
-\end{proof}
-
-
-\begin{theorem}
-The space $Y_{n,\la,s}$ is equidimensional of dimension $n(\la) + (n-k)(s-1)$. The subspaces $\overline{Y_{n,\la,s}^{\mu^\bullet}}$ for which $Y_{n,\la,s}^{\mu^\bullet}$ is nonempty form a complete set of irreducible components. In the case $s>\ell(\la)$, there are $\binom{n}{k}\cdot \#\SYT(\la)$ many irreducible components.
-\end{theorem}
-
-The next theorem is a characterization of the top cohomology group of $Y_{n,\lambda,s}$. This result generalizes Springer's theorem that the top cohomology group is an irreducible.
- 
-
-\begin{theorem}
-Let $d = \dim(Y_{n,\la,s}) = n(\la) + (n-k)(s-1)$, and consider $S_k$ as the subgroup of $S_n$ permuting the elements of $[k]$. For $s>\ell(\la)$, we have an isomorphism of $S_n$-modules
-\begin{align}
-H^{2d}(Y_{n,\la,s};\bQ) \cong \mathrm{Ind}\!\uparrow_{S_k}^{S_n} (S^\la).
-\end{align}
-For $s=\ell(\la)$, we have
-\begin{align}\label{eq:SLengthLambdaIso}
-    H^{2d}(Y_{n,\la,s};\bQ) \cong S^{\Lambda/(n-k)^{s-1}}.
-\end{align}
-\end{theorem}
-
-\begin{proof}
-The case when $s>\ell(\lambda)$ follows immediately by combining Theorem~\ref{thm:MainTheorem} with \cite[Corollary 3.3.15]{GriffinThesis}, which says that the top degree component of $R_{n,\lambda,s}$ is isomorphic~to~$\mathrm{Ind}\!\uparrow_{S_k}^{S_n}~\!(S^\lambda)$.
-
-Let us now assume $s=\ell(\lambda)$. Combining Theorem~\ref{thm:MainTheorem} and  Theorem~\ref{thm:MonomialExpansion}, we have that
+Let us now assume $s=\ell(\lambda)$. Combining Theorem~\ref{thm:MainTheorem} and Theorem~\ref{thm:MonomialExpansion}, we have that
 \begin{align}\label{eq:FrobCohMonomial}
     \Frob(H^{2d}(Y_{n,\lambda,s};\bQ);q) = \sum_{\substack{\varphi \in \mathrm{ECI}_{n,\lambda,s},\\ \mathrm{inv}(\varphi)=d}} \mathbf{x}^\varphi.
 \end{align}
@@ -1401,6 +1440,10 @@ Given $\varphi\in \mathrm{ECI}_{n,\la,s}$ of type $\alpha$ such that $\mathrm{in
 
 Therefore, the coefficient of $x^\alpha$ in the right-hand side of \eqref{eq:FrobCohMonomial} is equal to the coefficient of $x^{(\alpha_n,\alpha_{n-1},\dots, \alpha_1)}$ in $s_{\Lambda/(n-k)^{\ell(\la)-1}}(x)$. Since both the right-hand side of \eqref{eq:FrobCohMonomial} and the skew-Schur function are symmetric, we conclude that these two symmetric functions are equal. Therefore, the isomorphism~\eqref{eq:SLengthLambdaIso} holds, and the proof is complete.
 \end{proof}
+
+%In the case of $s>\ell(\la)$, the proof follows by combining Theorem~\ref{thm:MainTheorem} and the fact that, in this case, the top degree component of $R_{n,\lambda,s}$ is isomorphic to $\mathrm{Ind}\!\!\uparrow_{S_k}^{S_n}(S^\lambda)$~\cite[Corollary 3.3.15]{GriffinThesis}. In the case of $s=\ell(\la)$, the proof follows by combining Theorem~\ref{thm:MainTheorem} with the formula \cite[Theorem 5.13]{GriffinOSP} for $\Frob(R_{n,\lambda,s};q)$ and then using bijective techniques to show that the top degree component of this symmetric function is the skew Schur function $s_{\Lambda/(n-k)^{s-1}}(x)$.
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1423,11 +1466,11 @@ Y_{n,\la,\ell(\la)}\subseteq Y_{n,\la,\ell(\la)+1}\subseteq\cdots\subseteq Y_{n,
 It can be checked that $Y_{n,\la}$ is the direct limit of these topological spaces,
 \[Y_{n,\la} \cong \varinjlim_s Y_{n,\la,s}.\]
 
-Let us recall the Universal Coefficient Theorem for Cohomology. It states that given any space $X$, there exists a split exact sequence
-\[
-0\to \mathrm{Ext}^1_\bZ(H_{i-1}(X),\bZ)\to H^i(X)\stackrel{h}{\to} \Hom(H_i(X),\bZ)\to 0
-\]
-where the map $h$ is defined as follows: given $\varphi: C_i(X)\to \bZ$ an $i$-cocycle, then $\delta \varphi =0$, where $\delta$ is the differential map on singular cocycles. Therefore,  we have $\varphi|_{B_i(X)}=0$, so $\varphi$ induces a map $\overline \varphi :Z_i(X)/B_i(X)\to \bZ$. The map $h$ is defined by $h([\varphi]) \coloneqq \overline\varphi$.
+%Let us recall the Universal Coefficient Theorem for Cohomology. It states that given any space $X$, there exists a split exact sequence
+%\[
+%0\to \mathrm{Ext}^1_\bZ(H_{i-1}(X),\bZ)\to H^i(X)\stackrel{h}{\to} \Hom(H_i(X),\bZ)\to 0
+%\]
+%where the map $h$ is defined as follows: given $\varphi: C_i(X)\to \bZ$ an $i$-cocycle, then $\delta \varphi =0$, where $\delta$ is the differential map on singular cocycles. Therefore,  we have $\varphi|_{B_i(X)}=0$, so %$\varphi$ induces a map $\overline \varphi :Z_i(X)/B_i(X)\to \bZ$. The map $h$ is defined by $h([\varphi]) \coloneqq \overline\varphi$.
 
 
 \begin{theorem}
@@ -1439,33 +1482,38 @@ By Theorem~\ref{thm:MainTheorem}, we have $H^*(Y_{n,\lambda,s})\cong R_{n,\la,s}
 \begin{align}
 R_{n,\la} \cong \varprojlim_s H^*(Y_{n,\la,s}),
 \end{align}
-where the inverse limit is the limit in the category of graded rings. Therefore, it suffices to show that the natural map induced by the inclusions $Y_{n,\la,s}\subseteq Y_{n,\la}$,
-\begin{align}\label{eq:NaturalMapCohToLim}
-H^i(Y_{n,\la})\to \varprojlim_s H^i(Y_{n,\la,s}),
-\end{align}
-is an isomorphism for all $i$.
-
-Since each $Y_{n,\la,s}$ is a $T_1$ space, then $Y_{n,\la,s}$ satisfies the hypotheses of \cite[Proposition 3.33]{Hatcher}, so the following natural map is an isomorphism
-\begin{align}\label{eq:HomologyLimit}
-\varinjlim_s H_i(Y_{n,\la,s}) \xrightarrow{\sim} H_i(Y_{n,\la})
-\end{align}
-for all $i$. Since each of the spaces $Y_{n,\la,s}$ has an affine paving, then $H_i(Y_{n,\la,s})$ is a free $\bZ$-module for all $i$, so $\mathrm{Ext}^1_\bZ(H_i(Y_{n,\la,s}),\bZ)=0$ for all $i$. Therefore, $H^i(Y_{n,\la,s})\cong \Hom(H_i(Y_{n,\la,s}),\bZ)$ by the Universal Coefficient Theorem for Cohomology. Hence, we have
+where the inverse limit is the limit in the category of graded rings. Since each $Y_{n,\la,s}$ is a compact complex variety with an affine paving, we have
 \begin{align}
-    Hom(H_i(Y_{n,\la}),\bZ) &\xrightarrow{\sim} Hom(\varinjlim_s H_i(Y_{n,\la,s}),\bZ)\\
-    &\xrightarrow{\sim} \varprojlim_s Hom(H_i(Y_{n,\la,s}),\bZ)\\
-    &\xleftarrow{\sim} \varprojlim_s H^i(Y_{n,\la,s}).
+  \varprojlim_S H^*(Y_{n,\la,s}) \cong H^*(\varinjlim_s Y_{n,\la,s}) = H^*(Y_{n,\la}),
 \end{align}
-
-
-By \eqref{eq:HomologyLimit} and the fact that $H_i(Y_{n,\la,s}) \cong H_i(Y_{n,\la,s+1})$ for $s>i/2$, then $H_{i}(Y_{n,\la})$ is a free $\bZ$-module for all $i$, so $\mathrm{Ext}^1_\bZ(H_i(Y_{n,\la}),\bZ)=0$. Hence, by the Universal Coefficient Theorem for Cohomology, we have that
-\begin{align}
-H^i(Y_{n,\la}) \cong Hom(H_i(Y_{n,\la}),\bZ)
-\end{align}
-for all $i$, so 
-\begin{align}\label{eq:CompOfIsoCoh}
-H^i(Y_{n,\la}) \cong Hom(H_i(Y_{n,\la}),\bZ) \cong \varprojlim_s H^i(Y_{n,\la,s}).
-\end{align}
-In order to finish the proof, it must be checked that the composition of the isomorphisms in \eqref{eq:CompOfIsoCoh} is the same as the natural map \eqref{eq:NaturalMapCohToLim}. This is a routine check, and we omit it.
+see e.g.~\cite[Lemma 7.2]{Pawlowski-Rhoades}, which completes the proof.
+% Therefore, it suffices to show that the natural map induced by the inclusions $Y_{n,\la,s}\subseteq Y_{n,\la}$,
+% \begin{align}\label{eq:NaturalMapCohToLim}
+% H^i(Y_{n,\la})\to \varprojlim_s H^i(Y_{n,\la,s}),
+% \end{align}
+% is an isomorphism for all $i$.
+%
+% Since each $Y_{n,\la,s}$ is a $T_1$ space, then $Y_{n,\la,s}$ satisfies the hypotheses of \cite[Proposition 3.33]{Hatcher}, so the following natural map is an isomorphism
+% \begin{align}\label{eq:HomologyLimit}
+% \varinjlim_s H_i(Y_{n,\la,s}) \xrightarrow{\sim} H_i(Y_{n,\la})
+% \end{align}
+% for all $i$. Since each of the spaces $Y_{n,\la,s}$ has an affine paving, then $H_i(Y_{n,\la,s})$ is a free $\bZ$-module for all $i$, so $\mathrm{Ext}^1_\bZ(H_i(Y_{n,\la,s}),\bZ)=0$ for all $i$. Therefore, $H^i(Y_{n,\la,s})\cong \Hom(H_i(Y_{n,\la,s}),\bZ)$ by the Universal Coefficient Theorem for Cohomology. Hence, we have
+% \begin{align}
+%     Hom(H_i(Y_{n,\la}),\bZ) &\xrightarrow{\sim} Hom(\varinjlim_s H_i(Y_{n,\la,s}),\bZ)\\
+%     &\xrightarrow{\sim} \varprojlim_s Hom(H_i(Y_{n,\la,s}),\bZ)\\
+%     &\xleftarrow{\sim} \varprojlim_s H^i(Y_{n,\la,s}).
+% \end{align}
+%
+%
+% By \eqref{eq:HomologyLimit} and the fact that $H_i(Y_{n,\la,s}) \cong H_i(Y_{n,\la,s+1})$ for $s>i/2$, then $H_{i}(Y_{n,\la})$ is a free $\bZ$-module for all $i$, so $\mathrm{Ext}^1_\bZ(H_i(Y_{n,\la}),\bZ)=0$. Hence, by the Universal Coefficient Theorem for Cohomology, we have that
+% \begin{align}
+% H^i(Y_{n,\la}) \cong Hom(H_i(Y_{n,\la}),\bZ)
+% \end{align}
+% for all $i$, so 
+% \begin{align}\label{eq:CompOfIsoCoh}
+% H^i(Y_{n,\la}) \cong Hom(H_i(Y_{n,\la}),\bZ) \cong \varprojlim_s H^i(Y_{n,\la,s}).
+% \end{align}
+% In order to finish the proof, it must be checked that the composition of the isomorphisms in \eqref{eq:CompOfIsoCoh} is the same as the natural map \eqref{eq:NaturalMapCohToLim}. This is a routine check, and we omit it.
 \end{proof}
 
 
@@ -1474,30 +1522,36 @@ In order to finish the proof, it must be checked that the composition of the iso
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{question}
-  The variety $Y_{n,\la,s}$ is simulaneously the projective image of a Spaltenstein variety and a closed subvariety of a Steinberg variety,
-  \[
-\cB_{(1^n,s-1,\dots,s-1)}^\Lambda \twoheadrightarrow Y_{n,\la,s}\hookrightarrow \mathrm{Stein}_{(1^n,(s-1)(n-k)),\Lambda}.
-\]
-The Steinberg varieties are fibers of partial resolutions of the nilpotent cone~\cite{Goresky-Macpherson}, and Spaltenstein varieties have connections to representations of the general linear groups~\cite{Braverman-Gaitsgory}, crystals~\cite{Malik} and quiver varieties~\cite{Nakajima1,Nakajima2}. How do the varieties $Y_{n,\la,s}$ fit into these settings?
+Springer fibers have a natural type-independent description to other Lie types. Can the varieties $Y_{n,\la,s}$ be generalized to this setting, or for classical types?
 \end{question}
 
 \begin{question}
-There is a $s$-dimensional torus action on $Y_{n,\la,s}$, given by scaling the vectors in each generalized eigenspace of $N$ by the same constant. The space $Y_{2,\emptyset,2}$ is not a GKM variety because it does not have finitely many one-dimensional orbits with respect to this action. Is it still possible to compute its equivariant cohomology ring? Brundan and Ostrik reference Goresky-Macpherson's characterization of equiv cohomology of Springer fibers in terms of subspace arrangements, and extensions of those results.
+  The variety $Y_{n,\la,s}$ is simulaneously the projective image of a Spaltenstein variety and a closed subvariety of a Steinberg variety,
+  \[
+\cB_{(1^n,s-1,\dots,s-1)}^\Lambda \twoheadrightarrow Y_{n,\la,s}\hookrightarrow \{V_\bullet\in \Fl_{(1^n,(n-k)(s-1))}(\bC^K) \st N_\Lambda V_i\subseteq V_i \text{ for all }i\}.
+\]
+The Steinberg varieties are fibers of partial resolutions of the nilpotent cone~\cite{Goresky-Macpherson}, and Spaltenstein varieties have connections to representations of the general linear groups~\cite{Braverman-Gaitsgory}, crystals~\cite{Malik} and quiver varieties~\cite{Nakajima1,Nakajima2}. Do the varieties $Y_{n,\la,s}$ have any applications to these settings?
 \end{question}
+
+%\begin{question}
+%There is a $s$-dimensional torus action on $Y_{n,\la,s}$, given by scaling the vectors in each generalized eigenspace of $N$ by the same constant. The space $Y_{2,\emptyset,2}$ is not a GKM variety because it does not have finitely many one-dimensional orbits with respect to this action. Is it still possible to compute its equivariant cohomology ring? Brundan and Ostrik reference Goresky-Macpherson's characterization of equiv cohomology of Springer fibers in terms of subspace arrangements, and extensions of those results.
+%\end{question}
 
 \begin{question}
 What are the cell closures for the paving of $Y_{n,(1^k),k}$? Is there a nice description of the corresponding ``Bruhat poset''?
 \end{question}
 
-\begin{question}
-Can we identify the cohomology classes of the cell closures in the case of $Y_{n,(1^k),k}$?
-\end{question}
+%\begin{question}
+%Can we identify the cohomology classes of the cell closures in the case of $Y_{n,(1^k),k}$?
+%\end{question}
 
  
  
  \begin{question}
- The space $Y_{n,\la,s}$ is usually singular because it has many irreducible components. Under what condition are all of the irreducible components smooth? Is this true for $Y_{n,(1^k),k}$, in particular?
- \end{question}
+ The space $Y_{n,\la,s}$ in general singular because it has many irreducible components. Under what condition are all of the irreducible components smooth? Is this true for $Y_{n,(1^k),k}$, in particular?
+\end{question}
+
+
 
 
 \section{Acknowledgements}
