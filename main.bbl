@@ -36,6 +36,10 @@
 {\sc C.~De~Concini and C.~Procesi}, {\em Symmetric functions, conjugacy classes
   and the flag variety}, Invent. Math., 64 (1981), pp.~203--219.
 
+\bibitem{Eisenbud-Saltman}
+{\sc D.~Eisenbud and D.~Saltman}, {\em Rank varieties of matrices}, Commutative
+  Algebra,  (1989), pp.~173--212.
+
 \bibitem{Garsia-Haiman}
 {\sc A.~M. Garsia and M.~Haiman}, {\em A graded representation model for
   {M}acdonald's polynomials}, Proc. Nat. Acad. Sci. U.S.A., 90 (1993),
@@ -77,6 +81,16 @@
 {\sc R.~Hotta and T.~A. Springer}, {\em A specialization theorem for certain
   {W}eyl group representations and an application to the {G}reen polynomials of
   unitary groups}, Invent. Math., 41 (1977), pp.~113--127.
+
+\bibitem{Kostant}
+{\sc B.~Kostant}, {\em Lie group representations on polynomial rings}, Amer. J.
+  Math., 85 (1963), pp.~327--404.
+
+\bibitem{Kraft}
+{\sc H.~Kraft}, {\em Conjugacy classes and {W}eyl group representations}, in
+  Young tableaux and {S}chur functors in algebra and geometry ({T}oru\'{n},
+  1980), vol.~87 of Ast\'{e}risque, Soc. Math. France, Paris, 1981,
+  pp.~191--205.
 
 \bibitem{Pawlowski-Rhoades}
 {\sc B.~Pawlowski and B.~Rhoades}, {\em A flag variety for the {D}elta

@@ -45,6 +45,9 @@
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\sh}{\mathrm{sh}}
 \newcommand{\bx}{\mathbf{x}}
+\newcommand{\fgl}{\mathfrak{gl}}
+\newcommand{\ft}{\mathfrak{t}}
+\newcommand{\rk}{\mathrm{rk}}
 
 
 
@@ -78,7 +81,7 @@ We introduce a family of varieties $Y_{n,\lambda,s}$, \SG{which we call the \emp
 \item[\done] Subsec 2.6, Background: $R_{n,\la,s}$
 \item Sec 3, Add a full example of affine paving
 \item[\done] Sec 5, Rewrite using new notations
-\item Sec 7, Define $Y_{n,\la}$, show its cohomology is $R_{n,\la}$, state that this cohomology is iso to the coord ring of the diagonal rank scheme
+\item[\done] Sec 7, Define $Y_{n,\la}$, show its cohomology is $R_{n,\la}$, state that this cohomology is iso to the coord ring of the diagonal rank scheme
 \item Sec 8, Perhaps add an example of the partial orders on the set of admissible permutations, and the bijection with ordered set partitions in the case of $\lambda = (1^k)$ and $s=k$.
 \end{todolist}
 }
@@ -1317,7 +1320,7 @@ into an $S_n$-equivariant map.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In this section, we characterize the irreducible components of $Y_{n,\la,s}$, and we show that the number of irreducible components is equal to $\binom{n}{k}\cdot\#\SYT(\la)$ when $s>\ell(\la)$. We then prove a generalization of the Springer correspondence to the setting of induced Specht modules.
+In this section, we characterize the irreducible components of $Y_{n,\la,s}$, and we show that the number of irreducible components is equal to $\binom{n}{k}\cdot\#\SYT(\la)$ when $s>\ell(\la)$. We then prove that this fact extends to a representation-theoretic statement by giving a generalization of the Springer correspondence to the setting of induced Specht modules.
 
 
 Given a subspace $W\subseteq \bC^K$ such that $N_\Lambda W\subseteq W$, then $N_\Lambda(W\cap F_k)\subseteq W\cap F_k$. The nilpotent operator $N_\Lambda$ thus induces a nilpotent operator on the quotient space $F_k/(W\cap F_k)$, which we denote by $N_\Lambda|_{F_k/(W\cap F_k)}$.
@@ -1483,13 +1486,13 @@ Therefore, the coefficient of $\bx^\alpha$ in the right-hand side of \eqref{eq:F
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The space $Y_{n,\lambda}$}\label{sec:IndVariety}
+\section{The space $Y_{n,\lambda}$ and the scheme of diagonal rank-deficient matrices}\label{sec:IndVariety}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In this section, we construct a topological space $Y_{n,\lambda}$ whose cohomology ring is isomorphic to $R_{n,\lambda}$. We then state a generalization of a theorem of de Concini and Procesi that relates Springer fibers to the scheme of diagonal ``nilpotent'' matrices.
 
 
-
+\subsection{The space $Y_{n,\lambda}$}
 For any $n$ and $\lambda\vdash k$, define the topological space $Y_{n,\la}$ as follows. Let $N$ be a nilpotent operator on the $\bC$-vector space $\bC^\infty$ with countably infinite dimension that has Jordan type \[(n-k+\la_1, \dots, n-k+\la_{\ell(\la)}, n-k,n-k,\dots).\] 
 Then $\im(N^{n-k})$ has dimension $k$. We define the following topological space,
 \begin{align}
@@ -1501,6 +1504,7 @@ Y_{n,\la,\ell(\la)}\subseteq Y_{n,\la,\ell(\la)+1}\subseteq\cdots\subseteq Y_{n,
 \]
 It can be checked that $Y_{n,\la}$ is the direct limit of these topological spaces,
 \[Y_{n,\la} \cong \varinjlim_s Y_{n,\la,s}.\]
+We continue to abuse notation and use $\widetilde V_i$ to denote the tautological rank $i$ vector bundle on $Y_{n,\la}$. \SG{Does this object even exist?}
 
 %Let us recall the Universal Coefficient Theorem for Cohomology. It states that given any space $X$, there exists a split exact sequence
 %\[
@@ -1508,9 +1512,16 @@ It can be checked that $Y_{n,\la}$ is the direct limit of these topological spac
 %\]
 %where the map $h$ is defined as follows: given $\varphi: C_i(X)\to \bZ$ an $i$-cocycle, then $\delta \varphi =0$, where $\delta$ is the differential map on singular cocycles. Therefore,  we have $\varphi|_{B_i(X)}=0$, so %$\varphi$ induces a map $\overline \varphi :Z_i(X)/B_i(X)\to \bZ$. The map $h$ is defined by $h([\varphi]) \coloneqq \overline\varphi$.
 
+Let us recall the rings $R_{n,\la}$ defined in~\cite{GriffinOSP}, which are in general infinite dimensional $\bQ$-vector spaces,
+\begin{align}
+I_{n,\la} &\coloneqq \langle e_d(S) \st S\subseteq \bx_n,\, d>|S| - p_{|S|}^n(\la)\rangle,\\
+R_{n,\la} &\coloneqq \bQ[\bx_n]/I_{n,\la}.
+\end{align}
 
-\begin{theorem}
-We have $H^*(Y_{n,\la})\cong R_{n,\la}$ as graded rings.
+
+
+\begin{theorem}\label{thm:InfiniteIso}
+We have $H^*(Y_{n,\la})\cong R_{n,\la}$ as graded rings, such that $-c_1(\widetilde V_i/\widetilde V_{i-1})$ is identified with $x_i$.
 \end{theorem}
 
 \begin{proof}
@@ -1522,8 +1533,75 @@ where the inverse limit is taken in the category of graded rings. Since each $Y_
 \begin{align}
   \varprojlim_S H^*(Y_{n,\la,s}) \cong H^*(\varinjlim_s Y_{n,\la,s}) = H^*(Y_{n,\la}),
 \end{align}
-see e.g.~\cite[Lemma 7.2]{Pawlowski-Rhoades}, which completes the proof.
+see e.g.~\cite[Lemma 7.2]{Pawlowski-Rhoades}. By naturality of Chern classes, the first Chern classes $-c_1(\widetilde V_i/\widetilde V_{i-1})$ in $H^*(Y_{n,\la})$ correspond to their corresponding first Chern classes in $H^*(Y_{n,\la,s})$, which are in turn identified with the variable $x_i$, which completes the proof.
 \end{proof}
+
+\subsection{The scheme of diagonal rank-deficient matrices}
+
+Let $\fgl_n$ be the space of $n\times n$ matrices over $\bQ$. Let $x_{i,j}$  for $1\leq i,j \leq n$ be the coordinate functions corresponding to the entries of an $n\times n$ matrix. Then the coordinate ring of $\fgl_n$ is $\bQ[\fgl_n] = \bQ[x_{i,j}]$.  
+
+For $\la\vdash n$, let $O_\la\subseteq \fgl_n$ be the conjugacy class of nilpotent $n\times n$ matrices over $\bQ$ whose Jordan canonical form has block sizes recorded by $\la$. Let $\overline{O}_\la$ be the closure of $O_\la$ in $\fgl_n$ in the Zariski topology. The set of diagonal matrices $\ft$ is the variety defined by the ideal
+\begin{align}
+I(\ft) = \langle x_{i,j} \st i\neq j\rangle.
+\end{align}
+The \emph{scheme-theoretic intersection} of the varieties $\overline{O}_\la$ and $\ft$ is the affine scheme whose coordinate ring is defined by the sum of the defining ideals of $\overline{O}_\la$ and $\ft$,
+\begin{align}\label{eq:CoordinateRing}
+\bQ[\overline{O}_\la \cap \ft] \coloneqq \frac{\bQ[x_{i,j}]}{I(\overline{O}_\la) + I(\ft)}.
+\end{align}
+The symmetric group $S_n$ of permutation matrices acts by conjugation on $\ft$, which descends to an action of $S_n$ on $\bQ[\overline{O}_\la\cap \ft]$. Observe that the variables $x_{i,i}$ generate this coordinate ring. Reindexing the generators $x_{i,i}$ of $\bQ[\overline{O}_\la \cap \ft]$ by $x_i$, then $S_n$ acts by permuting the $x_i$ variables. We consider $\bQ[\overline{O}_\la\cap \ft]$ as a graded ring and graded $S_n$-module where $x_{i,i}$ is declared to be in degree $2$.
+
+Motivated by work of Kostant~\cite{Kostant} on the coinvariant algebra, Kraft~\cite{Kraft} conjectured that the coordinate ring~\eqref{eq:CoordinateRing} is isomorphic to the cohomology ring of a Springer fiber. De Concini and Procesi~\cite{dCP} proved Kraft's conjecture. Tanisaki~\cite{Tanisaki} then simplified the arguments of De Concini and Procesi and further proved that these rings have the explicit presentation as the quotient ring $R_{\la} = R_{n, \la, \ell(\la)}$.
+
+
+
+\begin{theorem}[\cite{dCP,Tanisaki}]
+We have isomorphisms of graded rings and graded $S_n$-modules
+\begin{align}
+H^*(\mathcal{B}^\lambda;\bQ) \cong R_\la \cong \bQ[\overline{O}_{\la'}\cap \ft],
+\end{align}
+where the $S_n$ action on $H^*(\mathcal{B}^\lambda;\bQ)$ is via permuting the first Chern classes $-c_1(\widetilde V_i/\widetilde V_{i-1})$, which corresponds to Springer's representation tensored with the sign representation.
+\end{theorem}
+
+In~\cite{Eisenbud-Saltman}, Eisenbud and Saltman study varieties generalizing the varieties $\overline{O}_{\la}$. These varieties are the main focus of this section.
+
+\begin{definition}
+Let $k\leq n$, and let $\la\vdash k$. The \emph{Eisenbud--Saltman rank variety} is the variety
+\begin{align}
+\overline{O}_{n,\la} &\coloneqq \{ X\in \fgl_n\st \dim\ker X^d \geq \la_1' + \cdots +\la_d', d=1,2,\dots, n\}\\
+&= \{X\in \fgl_n \st \rk(X^d)\leq (n-k)+p_{n-d}^n(\la), d=1,2,\dots, n\}.
+\end{align}
+\end{definition}
+The variety $\overline{O}_{n,\la}$ is the same as $X_r$ defined in \cite{Eisenbud-Saltman}, where $r$ is the rank function $r(d) = (n-k)+p_{n-d}^n(\la)$. When $n=k$, we have $\overline{O}_{n,\la} = \overline{O}_\la$. When $n>k$, then $\overline{O}_{n,\la}$ contains matrices which are not nilpotent.  In particular, the variety $\overline{O}_{n,\la}$ contains all block diagonal matrices of the form
+\begin{align}\label{eq:JordanForm}
+X_\la \oplus A_{n-k} = \left[\begin{array}{c|c} X_{\la} & 0 \\ \hline 0 & A_{n-k}\end{array} \right]
+\end{align}
+where $X_\la\in \overline{O}_\la\subseteq \fgl_k$ and $A_{n-k}\in \fgl_{n-k}$, as well as any matrix which is conjugate to a matrix in this form.
+
+By combining~\cite[Corollary 6.4]{GriffinOSP} and Theorem~\ref{thm:InfiniteIso}, we have the following extension of the result of de Concini and Procesi.
+
+\begin{corollary}
+We have a string of isomorphisms of graded rings and graded $S_n$-modules,
+\begin{align}
+H^*(Y_{n,\la};\bQ) \cong R_{n,\la} \cong \bQ[\overline{O}_{n,\la'}\cap \ft],
+\end{align}
+where the right-hand side is the coordinate ring of the scheme-theoretic intersection, and the  and $S_n$ acts on the cohomology ring by permuting the first Chern classes $-c_1(\widetilde V_i/\widetilde V_{i-1})$.
+\end{corollary}
+
+
+Let 
+\begin{align}
+\mathrm{PRD}_{n,\la} &\coloneqq \bigcup_{s\geq \ell(\la)} \mathrm{PRD}_{n,\la, s},
+\end{align}
+where we identify $\varphi\in \mathrm{PRD}_{n,\la, s}$ with the partial row-decreasing filling in $\mathrm{PRD}_{n,\la, s+1}$ obtained by appending an empty $(s+1)$th row to $\varphi$. Observe that for each $\varphi \in \mathrm{PRD}_{n,\la, s}$, the statistic $\inv(\varphi)$ does not depend on the parameter $s$. Hence, we may consider $\inv$ to be a statistic on elements of $\mathrm{PRD}_{n,\la}$.
+
+We have the following corollary of \cite[Theorem 6.6]{GriffinOSP} and Theorem~\ref{thm:InfiniteIso}.
+
+\begin{corollary}
+For any $k\leq n$ and $\la\vdash k$,
+\begin{align}
+\Frob(H^*(Y_{n,\la};\bQ);q) = \Frob(R_{n,\la};q) = \Frob(\bQ[\overline{O}_{n,\la'} \cap \ft];q)  &= \sum_{\varphi \in \mathrm{PRD}_{n,\la}} q^{2\,\inv(\varphi)} \bx^\varphi.
+\end{align}
+\end{corollary}
 
 
 
